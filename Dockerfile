@@ -17,6 +17,6 @@ RUN curl -sSL https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb
   && rm -f erlang-solutions_1.0_all.deb
 
 RUN apt-get update -y \
-  && apt-get install elixir -y
+  && apt-get install elixir=1.1.1 -y
 
 CMD ["iex"]
