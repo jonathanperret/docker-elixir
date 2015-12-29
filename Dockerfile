@@ -1,4 +1,4 @@
-FROM erlang:latest
+FROM erlang:18.1
 
 MAINTAINER Anthony Smith <anthony@sticksnleaves.com>
 
