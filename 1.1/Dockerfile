@@ -2,6 +2,9 @@ FROM erlang:18.1
 
 MAINTAINER Anthony Smith <anthony@sticksnleaves.com>
 
+ENV ELIXIR_MAJOR 1.1
+ENV ELIXIR_VERSION 1.1.1
+
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
