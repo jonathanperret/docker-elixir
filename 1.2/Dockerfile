@@ -1,26 +1,17 @@
-FROM erlang:18.2
+FROM buildpack-deps:jessie
 
-MAINTAINER Anthony Smith <anthony@sticksnleaves.com>
+MAINTAINER Jonathan Perret <jonathan@ut7.fr>
 
-ENV ELIXIR_MAJOR 1.2
-ENV ELIXIR_VERSION 1.2.0
-
-ENV LANG en_US.UTF-8
-ENV LANGUAGE en_US:en
-ENV LC_ALL en_US.UTF-8
-
-RUN apt-get update -y \
-  && apt-get install locales -y
-
-RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen \
-  && locale-gen
+ENV LC_ALL C.UTF-8
 
 RUN curl -sSL https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb -o erlang-solutions_1.0_all.deb \
-  && dpkg -i erlang-solutions_1.0_all.deb \
+  && DEBIAN_FRONTEND=noninteractive dpkg -i erlang-solutions_1.0_all.deb \
   && rm -f erlang-solutions_1.0_all.deb
 
-RUN apt-get update -y \
-  && apt-get install esl-erlang -y \
-  && apt-get install elixir=1.2.0-1 -y
+RUN apt-get update \
+  && DEBIAN_FRONTEND=noninteractive apt-get install -y elixir=1.2.0-1
+
+RUN mix local.hex --force && \
+    mix local.rebar --force
 
 CMD ["iex"]

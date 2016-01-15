@@ -15,15 +15,17 @@ To learn more about Elixir, check the
 
 ## About this Image
 
-This image is based off of the official Docker Erlang image. It is configured
+This image is based off of an official Debian image. It is configured
 for the latest release of Elixir and exposes the `iex` command.
+
+It was originally created by Anthony Smith at https://github.com/sticksnleaves/docker-elixir.
 
 ## How to use This Image
 
 #### Create a `Dockerfile` in your Project
 
 ```
-  FROM sticksnleaves/elixir
+  FROM jonathanperret/elixir
 
   # Do stuff for my project here
 ```
@@ -31,10 +33,10 @@ for the latest release of Elixir and exposes the `iex` command.
 You can also use it for a simple IEx repl:
 
 ```
-  docker pull sticksnleaves/elixir
-  docker run -t -i sticksnleaves/elixir
+  docker pull jonathanperret/elixir
+  docker run -t -i jonathanperret/elixir
 ```
 
 ## Issues
 
-If you have a problem please submit an issue in [the issue tracker](https://github.com/sticksnleaves/docker-elixir/issues).
+If you have a problem please submit an issue in [the issue tracker](https://github.com/jonathanperret/docker-elixir/issues).
