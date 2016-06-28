@@ -16,7 +16,7 @@ RUN apt-get update \
     erlang-dev=1:$ERLANG_VERSION-1 \
     erlang-nox=1:$ERLANG_VERSION-1 \
     erlang-src=1:$ERLANG_VERSION-1 \
-    elixir=$ELIXIR_VERSION-1
+    elixir=$ELIXIR_VERSION-2
 
 RUN mix local.hex --force && \
     mix local.rebar --force
